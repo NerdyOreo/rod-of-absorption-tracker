@@ -15,6 +15,9 @@
                 <option value="wizard">Wizard</option>
                 <option value="cleric">Cleric</option>
                 <option value="druid">Druid</option>
+                <option value="sorcerer">Sorcerer</option>
+                <option value="warlock">Warlock</option>
+                <option value="bard">Bard</option>
                 <!-- Add more classes as needed -->
             </select>
         </div>
@@ -31,27 +34,13 @@
             <label>Current Stored Energy: <span id="storedEnergy">0</span>/50</label>
         </div>
         <div>
+            <label for="spellLevel">Spell Level to Absorb:</label>
+            <input type="number" id="spellLevel" min="1" max="5">
+            <button id="absorbSpell">Absorb Spell</button>
+        </div>
+        <div>
             <label>Spell Slots:</label>
-            <div class="spell-slot">
-                <label for="level1">Level 1:</label>
-                <input type="checkbox" id="level1" data-energy="1">
-            </div>
-            <div class="spell-slot">
-                <label for="level2">Level 2:</label>
-                <input type="checkbox" id="level2" data-energy="2">
-            </div>
-            <div class="spell-slot">
-                <label for="level3">Level 3:</label>
-                <input type="checkbox" id="level3" data-energy="3">
-            </div>
-            <div class="spell-slot">
-                <label for="level4">Level 4:</label>
-                <input type="checkbox" id="level4" data-energy="4">
-            </div>
-            <div class="spell-slot">
-                <label for="level5">Level 5:</label>
-                <input type="checkbox" id="level5" data-energy="5">
-            </div>
+            <div id="spellSlots"></div>
         </div>
     </div>
     <script src="script.js"></script>
