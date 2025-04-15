@@ -17,7 +17,7 @@ characterLevelElement.addEventListener('change', updateSpellSlots);
 function updateSpellSlots() {
     spellSlotsElement.innerHTML = '';
     const characterLevel = parseInt(characterLevelElement.value);
-    const maxSpellLevel = Math.min(characterLevel, 9); // Max spell level based on character level
+    const maxSpellLevel = getMaxSpellLevel(characterLevel);
 
     for (let level = 1; level <= maxSpellLevel; level++) {
         const energyCost = level;
@@ -44,6 +44,18 @@ function updateSpellSlots() {
         }
         spellSlotsElement.appendChild(slotContainer);
     }
+}
+
+function getMaxSpellLevel(characterLevel) {
+    if (characterLevel >= 17) return 9;
+    if (characterLevel >= 15) return 8;
+    if (characterLevel >= 13) return 7;
+    if (characterLevel >= 11) return 6;
+    if (characterLevel >= 9) return 5;
+    if (characterLevel >= 7) return 4;
+    if (characterLevel >= 5) return 3;
+    if (characterLevel >= 3) return 2;
+    return 1;
 }
 
 updateSpellSlots();
