@@ -4,7 +4,7 @@ let storedEnergy = 0;
 
 document.getElementById('absorbSpell').addEventListener('click', function() {
     const spellLevel = parseInt(document.getElementById('spellLevel').value);
-    if (spellLevel >= 1 && spellLevel <= 5) {
+    if (spellLevel >= 1 && spellLevel <= 9) {
         storedEnergy += spellLevel;
         storedEnergyElement.textContent = storedEnergy;
         updateSpellSlots();
@@ -13,7 +13,7 @@ document.getElementById('absorbSpell').addEventListener('click', function() {
 
 function updateSpellSlots() {
     spellSlotsElement.innerHTML = '';
-    for (let level = 1; level <= 5; level++) {
+    for (let level = 1; level <= 9; level++) {
         const energyCost = level;
         const numSlots = Math.floor(storedEnergy / energyCost);
         const slotContainer = document.createElement('div');
