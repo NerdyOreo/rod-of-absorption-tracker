@@ -1,27 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rod of Absorption Tracker</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rod of Absorption Tracker</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Rod of Absorption Tracker</h1>
-    <div class="tracker">
-      <p>Current Energy: <span id="current-energy">0</span>/50</p>
-      <div class="controls">
-        <input type="number" id="spell-level" placeholder="Spell Level (1-9)">
-        <button onclick="absorbSpell()">Absorb Spell</button>
-      </div>
-      <div class="breakdown" id="breakdown"></div>
-      <div class="controls">
-        <input type="number" id="slot-level" placeholder="Slot Level (1-5)">
-        <button onclick="convertEnergy()">Convert to Slot</button>
-      </div>
+    <div id="tracker">
+        <h1>Rod of Absorption Tracker</h1>
+        <div>
+            <label for="playerClass">Player Class:</label>
+            <select id="playerClass">
+                <option value="wizard">Wizard</option>
+                <option value="cleric">Cleric</option>
+                <option value="druid">Druid</option>
+                <!-- Add more classes as needed -->
+            </select>
+        </div>
+        <div>
+            <label for="characterLevel">Character Level:</label>
+            <select id="characterLevel">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <!-- Add more levels as needed -->
+            </select>
+        </div>
+        <div>
+            <label>Current Stored Energy: <span id="storedEnergy">0</span>/50</label>
+        </div>
+        <div>
+            <label>Spell Slots:</label>
+            <div class="spell-slot">
+                <label for="level1">Level 1:</label>
+                <input type="checkbox" id="level1" data-energy="1">
+            </div>
+            <div class="spell-slot">
+                <label for="level2">Level 2:</label>
+                <input type="checkbox" id="level2" data-energy="2">
+            </div>
+            <div class="spell-slot">
+                <label for="level3">Level 3:</label>
+                <input type="checkbox" id="level3" data-energy="3">
+            </div>
+            <div class="spell-slot">
+                <label for="level4">Level 4:</label>
+                <input type="checkbox" id="level4" data-energy="4">
+            </div>
+            <div class="spell-slot">
+                <label for="level5">Level 5:</label>
+                <input type="checkbox" id="level5" data-energy="5">
+            </div>
+        </div>
     </div>
-  </div>
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
