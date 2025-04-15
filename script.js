@@ -1,5 +1,6 @@
 const storedEnergyElement = document.getElementById('storedEnergy');
 const spellSlotsElement = document.getElementById('spellSlots');
+const characterLevelElement = document.getElementById('characterLevel');
 let storedEnergy = 0;
 
 document.getElementById('absorbSpell').addEventListener('click', function() {
@@ -11,9 +12,14 @@ document.getElementById('absorbSpell').addEventListener('click', function() {
     }
 });
 
+characterLevelElement.addEventListener('change', updateSpellSlots);
+
 function updateSpellSlots() {
     spellSlotsElement.innerHTML = '';
-    for (let level = 1; level <= 9; level++) {
+    const characterLevel = parseInt(characterLevelElement.value);
+    const maxSpellLevel = Math.min(characterLevel, 9); // Max spell level based on character level
+
+    for (let level = 1; level <= maxSpellLevel; level++) {
         const energyCost = level;
         const numSlots = Math.floor(storedEnergy / energyCost);
         const slotContainer = document.createElement('div');
