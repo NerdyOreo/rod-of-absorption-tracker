@@ -26,6 +26,7 @@ function displayBreakdown(spellLevel) {
     slotDiv.onclick = () => toggleSlot(slotDiv);
     breakdownDiv.appendChild(slotDiv);
   }
+  updateSlotsDisplay();
 }
 
 function toggleSlot(slotDiv) {
@@ -44,8 +45,23 @@ function convertEnergy() {
   }
   currentEnergy -= slotLevel;
   updateEnergyDisplay();
+  updateSlotsDisplay();
 }
 
 function updateEnergyDisplay() {
   document.getElementById('current-energy').textContent = currentEnergy;
+}
+
+function updateSlotsDisplay() {
+  const slotsDiv = document.getElementById('slots');
+  slotsDiv.innerHTML = ''; // Clear previous slots
+  for (let i = 1; i <= maxCapacity; i++) {
+    const slotIcon = document.createElement('div');
+    slotIcon.className = 'slot-icon';
+    slotIcon.textContent = i;
+    if (i <= currentEnergy) {
+      slotIcon.classList.add('used');
+    }
+    slotsDiv.appendChild(slotIcon);
+  }
 }
