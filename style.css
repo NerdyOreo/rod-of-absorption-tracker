@@ -17,7 +17,7 @@ label {
     display: block;
     margin-bottom: 5px;
 }
-select, input[type="checkbox"] {
+select, input[type="checkbox"], input[type="number"] {
     margin-bottom: 10px;
 }
 .spell-slot {
