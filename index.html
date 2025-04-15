@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rod of Absorption Tracker</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rod of Absorption Tracker</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Rod of Absorption Tracker</h1>
-        <div class="tracker">
-            <p>Current Energy: <span id="current-energy">0</span>/50</p>
-            <div class="controls">
-                <input type="number" id="spell-level" placeholder="Spell Level (1-9)">
-                <button onclick="absorbSpell()">Absorb Spell</button>
-            </div>
-            <div class="controls">
-                <input type="number" id="slot-level" placeholder="Slot Level (1-5)">
-                <button onclick="convertEnergy()">Convert to Slot</button>
-            </div>
-        </div>
+  <div class="container">
+    <h1>Rod of Absorption Tracker</h1>
+    <div class="tracker">
+      <p>Current Energy: <span id="current-energy">0</span>/50</p>
+      <div class="controls">
+        <input type="number" id="spell-level" placeholder="Spell Level (1-9)">
+        <button onclick="absorbSpell()">Absorb Spell</button>
+      </div>
+      <div class="breakdown" id="breakdown"></div>
+      <div class="controls">
+        <input type="number" id="slot-level" placeholder="Slot Level (1-5)">
+        <button onclick="convertEnergy()">Convert to Slot</button>
+      </div>
     </div>
-    <script src="script.js"></script>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
