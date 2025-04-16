@@ -18,7 +18,6 @@ function updateSpellSlots() {
     spellSlotsElement.innerHTML = '';
     const characterLevel = parseInt(characterLevelElement.value);
     const maxSpellLevel = getMaxSpellLevel(characterLevel);
-
     for (let level = 1; level <= maxSpellLevel; level++) {
         const energyCost = level;
         const numSlots = Math.floor(storedEnergy / energyCost);
@@ -59,3 +58,8 @@ function getMaxSpellLevel(characterLevel) {
 }
 
 updateSpellSlots();
+
+const darkModeToggle = document.getElementById('darkModeToggle');
+darkModeToggle.addEventListener('change', function() {
+    document.body.classList.toggle('dark-mode', darkModeToggle.checked);
+});
