@@ -47,10 +47,10 @@ function updateSpellSlots() {
 }
 
 function getMaxSpellLevel(characterLevel) {
-    if (characterLevel >= 17) return 9;
-    if (characterLevel >= 15) return 8;
-    if (characterLevel >= 13) return 7;
-    if (characterLevel >= 11) return 6;
+    if (characterLevel >= 17) return 5;
+    if (characterLevel >= 15) return 5;
+    if (characterLevel >= 13) return 5;
+    if (characterLevel >= 11) return 5;
     if (characterLevel >= 9) return 5;
     if (characterLevel >= 7) return 4;
     if (characterLevel >= 5) return 3;
