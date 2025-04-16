@@ -61,5 +61,6 @@ updateSpellSlots();
 
 const darkModeToggle = document.getElementById('darkModeToggle');
 darkModeToggle.addEventListener('change', function() {
+    console.log('Dark mode toggle changed:', darkModeToggle.checked);
     document.body.classList.toggle('dark-mode', darkModeToggle.checked);
 });
