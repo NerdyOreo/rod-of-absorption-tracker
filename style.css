@@ -1,29 +1,47 @@
+:root {
+    --background-color: #f9f9f9;
+    --text-color: #000;
+    --border-color: #ccc;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    background-color: var(--background-color);
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
+
 #tracker {
     width: 300px;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     border-radius: 10px;
     background-color: #fff;
 }
+
 label {
     display: block;
     margin-bottom: 5px;
 }
+
 select, input[type="checkbox"], input[type="number"], button {
     margin-bottom: 10px;
 }
+
 .spell-slot {
     display: flex;
     align-items: center;
 }
+
 .spell-slot label {
     flex: 1;
+}
+
+body.dark-mode {
+    --background-color: #333;
+    --text-color: #fff;
+    --border-color: #555;
 }
